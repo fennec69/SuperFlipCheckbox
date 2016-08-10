@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlipCheckbox">
+        <attr name="checkedBackground" format="reference"/>
+        <attr name="uncheckedBackground" format="reference"/>
+        <attr name="checkedSrc" format="reference"/>
+        <attr name="uncheckedSrc" format="reference"/>
+        <attr name="checkedText" format="string"/>
+        <attr name="uncheckedText" format="string"/>
+        <attr name="checkedTint" format="color"/>
+        <attr name="uncheckedTint" format="color"/>
+        <attr name="checkedBackgroundTint" format="color"/>
+        <attr name="uncheckedBackgroundTint" format="color"/>
+        <attr name="checked" format="boolean"/>
+        <attr name="imagePadding" format="dimension"/>
+    </declare-styleable>
+</resources>
