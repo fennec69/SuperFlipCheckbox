@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sianav.sample.MainActivity">
+
+    <com.sianav.superflipcheckbox.FlipCheckbox
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        app:checked="false"
+        app:checkedBackground="@drawable/circle_shape_fill"
+        app:checkedBackgroundTint="@color/grey"
+        app:checkedSrc="@drawable/ic_check"
+        app:checkedTint="@color/white"
+        app:imagePadding="10dp"
+        app:uncheckedBackground="@drawable/circle_shape_fill"
+        app:uncheckedBackgroundTint="@color/blue"
+        app:uncheckedText="T"
+        app:uncheckedTint="@color/white"
+        />
+
+    <com.sianav.superflipcheckbox.FlipCheckbox
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        app:checked="false"
+        app:checkedBackground="@drawable/circle_shape_fill"
+        app:checkedBackgroundTint="@color/green"
+        app:checkedText="H"
+        app:checkedTint="@color/white"
+        app:imagePadding="10dp"
+        app:uncheckedBackground="@drawable/circle_shape_fill"
+        app:uncheckedBackgroundTint="@color/red"
+        app:uncheckedSrc="@drawable/sample"
+        app:uncheckedTint="@color/white"
+        />
+
+    <com.sianav.superflipcheckbox.FlipCheckbox
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        app:checked="false"
+        app:checkedBackground="@drawable/circle_shape_fill"
+        app:checkedBackgroundTint="@color/green"
+        app:checkedText="X"
+        app:checkedTint="@color/white"
+        app:imagePadding="10dp"
+        app:uncheckedBackground="@drawable/circle_shape"
+        app:uncheckedText="F"
+        app:uncheckedTint="@color/blue"
+        />
+
+</LinearLayout>

@@ -180,6 +180,10 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         else addView(mCheckedView, params);
     }
 
+    public String getUncheckedText() {
+        return mUncheckedText;
+    }
+
     public void setUncheckedText(String text) {
         int index = indexOfChild(mUncheckedView);
         if (mUncheckedView != null) removeView(mUncheckedView);
@@ -197,6 +201,10 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         else addView(mUncheckedView, params);
     }
 
+    public String getCheckedText() {
+        return mCheckedText;
+    }
+
     public void setCheckedText(String text) {
         int index = indexOfChild(mCheckedView);
         if (mCheckedView != null) removeView(mCheckedView);
@@ -212,6 +220,51 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         if (index != -1) addView(mCheckedView, index, params);
         else addView(mCheckedView, params);
+    }
+
+    public int getCheckedTint() {
+        return mCheckedTint;
+    }
+
+    public void setCheckedTint(int checkedTint) {
+        mCheckedTint = checkedTint;
+        init();
+    }
+
+    public int getUncheckedBackgroundTint() {
+        return mUncheckedBackgroundTint;
+    }
+
+    public void setUncheckedBackgroundTint(int uncheckedBackgroundTint) {
+        mUncheckedBackgroundTint = uncheckedBackgroundTint;
+        init();
+    }
+
+    public int getCheckedBackgroundTint() {
+        return mCheckedBackgroundTint;
+    }
+
+    public void setCheckedBackgroundTint(int checkedBackgroundTint) {
+        mCheckedBackgroundTint = checkedBackgroundTint;
+        init();
+    }
+
+    public int getUncheckedTint() {
+        return mUncheckedTint;
+    }
+
+    public void setUncheckedTint(int uncheckedTint) {
+        mUncheckedTint = uncheckedTint;
+        init();
+    }
+
+    public int getImagePadding() {
+        return mImagePadding;
+    }
+
+    public void setImagePadding(int imagePadding) {
+        mImagePadding = imagePadding;
+        init();
     }
 
     public interface OnCheckedChangeListener {
