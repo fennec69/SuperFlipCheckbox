@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
-version = "0.0.1"
+version = "0.0.2"
 
 android {
     compileSdkVersion 23
@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName version
     }
     buildTypes {
         release {
@@ -23,7 +23,7 @@ android {
 }
 
 def siteUrl = 'https://github.com/fennec69/SuperFlipCheckbox'
-def gitUrl = 'https://github.com/fennec69/SuperFlipCheckbox.git'   // Git repository URL
+def gitUrl = 'https://github.com/fennec69/SuperFlipCheckbox.git'
 group = "com.sianav"
 
 install {

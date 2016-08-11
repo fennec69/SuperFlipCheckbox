@@ -29,7 +29,8 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
     private int mUncheckedBackgroundTint;
     private int mCheckedBackgroundTint;
     private int mUncheckedTint;
-    private int mImagePadding;
+    private int mImageCheckedPadding;
+    private int mImageUncheckedPadding;
     private View mCheckedView;
     private View mUncheckedView;
     private OnCheckedChangeListener mOnCheckedChangeListener;
@@ -57,7 +58,8 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
             mCheckedBackgroundTint = a.getColor(R.styleable.FlipCheckbox_checkedBackgroundTint, 0);
             mUncheckedBackgroundTint = a.getColor(R.styleable.FlipCheckbox_uncheckedBackgroundTint, 0);
             mChecked = a.getBoolean(R.styleable.FlipCheckbox_checked, false);
-            mImagePadding = a.getLayoutDimension(R.styleable.FlipCheckbox_imagePadding, 0);
+            mImageCheckedPadding = a.getLayoutDimension(R.styleable.FlipCheckbox_imageCheckedPadding, 0);
+            mImageUncheckedPadding = a.getLayoutDimension(R.styleable.FlipCheckbox_imageUncheckedPadding, 0);
             mCheckedText = a.getString(R.styleable.FlipCheckbox_checkedText);
             mUncheckedText = a.getString(R.styleable.FlipCheckbox_uncheckedText);
         } finally {
@@ -154,7 +156,7 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         ((ImageView) mUncheckedView).setColorFilter(mUncheckedTint);
         ((ImageView) mUncheckedView).setScaleType(ImageView.ScaleType.FIT_CENTER);
         mUncheckedView.setBackgroundResource(mUncheckedDrawable);
-        mUncheckedView.setPadding(mImagePadding, mImagePadding, mImagePadding, mImagePadding);
+        mUncheckedView.setPadding(mImageUncheckedPadding, mImageUncheckedPadding, mImageUncheckedPadding, mImageUncheckedPadding);
         if (mUncheckedBackgroundTint != 0) {
             mUncheckedView.getBackground().setColorFilter(mUncheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
@@ -171,7 +173,7 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         ((ImageView) mCheckedView).setColorFilter(mCheckedTint);
         ((ImageView) mCheckedView).setScaleType(ImageView.ScaleType.FIT_CENTER);
         mCheckedView.setBackgroundResource(mCheckedDrawable);
-        mCheckedView.setPadding(mImagePadding, mImagePadding, mImagePadding, mImagePadding);
+        mCheckedView.setPadding(mImageCheckedPadding, mImageCheckedPadding, mImageCheckedPadding, mImageCheckedPadding);
         if (mCheckedBackgroundTint != 0) {
             mCheckedView.getBackground().setColorFilter(mCheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
@@ -258,12 +260,21 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         init();
     }
 
-    public int getImagePadding() {
-        return mImagePadding;
+    public int getImageCheckedPadding() {
+        return mImageCheckedPadding;
     }
 
-    public void setImagePadding(int imagePadding) {
-        mImagePadding = imagePadding;
+    public void setImageCheckedPadding(int imageCheckedPadding) {
+        mImageCheckedPadding = imageCheckedPadding;
+        init();
+    }
+
+    public int getImageUncheckedPadding() {
+        return mImageUncheckedPadding;
+    }
+
+    public void setImageUncheckedPadding(int imageUncheckedPadding) {
+        mImageUncheckedPadding = imageUncheckedPadding;
         init();
     }
 

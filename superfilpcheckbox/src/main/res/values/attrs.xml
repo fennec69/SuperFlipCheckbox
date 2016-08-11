@@ -12,6 +12,7 @@
         <attr name="checkedBackgroundTint" format="color"/>
         <attr name="uncheckedBackgroundTint" format="color"/>
         <attr name="checked" format="boolean"/>
-        <attr name="imagePadding" format="dimension"/>
+        <attr name="imageCheckedPadding" format="dimension"/>
+        <attr name="imageUncheckedPadding" format="dimension"/>
     </declare-styleable>
 </resources>

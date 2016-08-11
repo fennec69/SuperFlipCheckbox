@@ -7,7 +7,7 @@ Add dependency in application module gradle file:
 
 ```gradle
 dependencies {
-    compile 'com.sianav:superfilpcheckbox:0.0.1'
+    compile 'com.sianav:superfilpcheckbox:0.0.2'
 }
 ```
 ## How to use ?

@@ -12,16 +12,16 @@
     tools:context="com.sianav.sample.MainActivity">
 
     <com.sianav.superflipcheckbox.FlipCheckbox
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/checkboxSmall"
+        android:layout_width="@dimen/checkbox_small"
+        android:layout_height="@dimen/checkbox_small"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
-        app:checked="false"
         app:checkedBackground="@drawable/circle_shape_fill"
         app:checkedBackgroundTint="@color/grey"
         app:checkedSrc="@drawable/ic_check"
         app:checkedTint="@color/white"
-        app:imagePadding="10dp"
+        app:imageCheckedPadding="10dp"
         app:uncheckedBackground="@drawable/circle_shape_fill"
         app:uncheckedBackgroundTint="@color/blue"
         app:uncheckedText="T"
@@ -29,16 +29,30 @@
         />
 
     <com.sianav.superflipcheckbox.FlipCheckbox
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:id="@+id/checkboxSquare"
+        android:layout_width="@dimen/checkbox_medium"
+        android:layout_height="@dimen/checkbox_medium"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
-        app:checked="false"
+        app:checked="true"
+        app:checkedBackground="@color/grey"
+        app:checkedSrc="@drawable/ic_check"
+        app:checkedTint="@color/white"
+        app:imageCheckedPadding="10dp"
+        app:uncheckedSrc="@drawable/photo"
+        />
+
+    <com.sianav.superflipcheckbox.FlipCheckbox
+        android:id="@+id/checkboxMedium"
+        android:layout_width="@dimen/checkbox_medium"
+        android:layout_height="@dimen/checkbox_medium"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
         app:checkedBackground="@drawable/circle_shape_fill"
         app:checkedBackgroundTint="@color/green"
         app:checkedText="H"
         app:checkedTint="@color/white"
-        app:imagePadding="10dp"
+        app:imageUncheckedPadding="10dp"
         app:uncheckedBackground="@drawable/circle_shape_fill"
         app:uncheckedBackgroundTint="@color/red"
         app:uncheckedSrc="@drawable/sample"
@@ -46,16 +60,15 @@
         />
 
     <com.sianav.superflipcheckbox.FlipCheckbox
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/checkboxBig"
+        android:layout_width="@dimen/checkbox_big"
+        android:layout_height="@dimen/checkbox_big"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
-        app:checked="false"
         app:checkedBackground="@drawable/circle_shape_fill"
         app:checkedBackgroundTint="@color/green"
         app:checkedText="X"
         app:checkedTint="@color/white"
-        app:imagePadding="10dp"
         app:uncheckedBackground="@drawable/circle_shape"
         app:uncheckedText="F"
         app:uncheckedTint="@color/blue"
