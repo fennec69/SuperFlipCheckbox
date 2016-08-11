@@ -1,6 +1,9 @@
 # SuperFlipCheckbox
 Android Gmail like animated flip checkbox
 
+## Screenshot
+<img src="https://github.com/fennec69/SuperFlipCheckbox/blob/master/screenshots/presentation.gif" height="600px" />
+
 ## Installing
 
 Add dependency in application module gradle file:
