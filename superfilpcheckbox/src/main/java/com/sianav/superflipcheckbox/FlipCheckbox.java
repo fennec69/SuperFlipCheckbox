@@ -124,6 +124,22 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         if (mOnCheckedChangeListener != null) mOnCheckedChangeListener.onCheckedChanged(mChecked);
     }
 
+    public void setCheckedInmediate(boolean checked) {
+        if (checked != mChecked) {
+            if (checked) check(ANIMATION_DURATION);
+            else uncheck(ANIMATION_DURATION);
+        }
+        mChecked = checked;
+    }
+
+    public void setCheckedInmediate(boolean checked, int animationDuration) {
+        if (checked != mChecked) {
+            if (checked) check(animationDuration);
+            else uncheck(animationDuration);
+        }
+        mChecked = checked;
+    }
+
     @Override
     public void toggle() {
         setChecked(!mChecked);
@@ -150,8 +166,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
 
     public void setUncheckedImage(int resId) {
         int index = indexOfChild(mUncheckedView);
-        if (mUncheckedView != null) removeView(mUncheckedView);
-        mUncheckedView = new ImageView(getContext());
+        boolean newView = mUncheckedView == null || !(mUncheckedView instanceof ImageView);
+        if (newView) {
+            removeView(mUncheckedView);
+            mUncheckedView = new ImageView(getContext());
+        }
         ((ImageView) mUncheckedView).setImageResource(resId);
         ((ImageView) mUncheckedView).setColorFilter(mUncheckedTint);
         ((ImageView) mUncheckedView).setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -160,15 +179,20 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         if (mUncheckedBackgroundTint != 0) {
             mUncheckedView.getBackground().setColorFilter(mUncheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
-        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        if (index != -1) addView(mUncheckedView, index, params);
-        else addView(mUncheckedView, params);
+        if (newView) {
+            LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            if (index != -1) addView(mUncheckedView, index, params);
+            else addView(mUncheckedView, params);
+        }
     }
 
     public void setCheckedImage(int resId) {
         int index = indexOfChild(mCheckedView);
-        if (mCheckedView != null) removeView(mCheckedView);
-        mCheckedView = new ImageView(getContext());
+        boolean newView = mCheckedView == null || !(mCheckedView instanceof ImageView);
+        if (newView) {
+            removeView(mCheckedView);
+            mCheckedView = new ImageView(getContext());
+        }
         ((ImageView) mCheckedView).setImageResource(resId);
         ((ImageView) mCheckedView).setColorFilter(mCheckedTint);
         ((ImageView) mCheckedView).setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -177,9 +201,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         if (mCheckedBackgroundTint != 0) {
             mCheckedView.getBackground().setColorFilter(mCheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
-        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        if (index != -1) addView(mCheckedView, index, params);
-        else addView(mCheckedView, params);
+        if (newView) {
+            LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            if (index != -1) addView(mCheckedView, index, params);
+            else addView(mCheckedView, params);
+        }
     }
 
     public String getUncheckedText() {
@@ -188,8 +214,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
 
     public void setUncheckedText(String text) {
         int index = indexOfChild(mUncheckedView);
-        if (mUncheckedView != null) removeView(mUncheckedView);
-        mUncheckedView = new TextView(getContext());
+        boolean newView = mUncheckedView == null || !(mUncheckedView instanceof TextView);
+        if (newView) {
+            removeView(mUncheckedView);
+            mUncheckedView = new TextView(getContext());
+        }
         ((TextView) mUncheckedView).setTextColor(mUncheckedTint);
         ((TextView) mUncheckedView).setText(text);
         ((TextView) mUncheckedView).setGravity(Gravity.CENTER);
@@ -198,9 +227,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         if (mUncheckedBackgroundTint != 0) {
             mUncheckedView.getBackground().setColorFilter(mUncheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
-        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        if (index != -1) addView(mUncheckedView, index, params);
-        else addView(mUncheckedView, params);
+        if (newView) {
+            LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            if (index != -1) addView(mUncheckedView, index, params);
+            else addView(mUncheckedView, params);
+        }
     }
 
     public String getCheckedText() {
@@ -209,8 +240,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
 
     public void setCheckedText(String text) {
         int index = indexOfChild(mCheckedView);
-        if (mCheckedView != null) removeView(mCheckedView);
-        mCheckedView = new TextView(getContext());
+        boolean newView = mCheckedView == null || !(mCheckedView instanceof TextView);
+        if (newView) {
+            if (mCheckedView != null) removeView(mCheckedView);
+            mCheckedView = new TextView(getContext());
+        }
         ((TextView) mCheckedView).setTextColor(mCheckedTint);
         ((TextView) mCheckedView).setText(text);
         ((TextView) mCheckedView).setGravity(Gravity.CENTER);
@@ -219,9 +253,11 @@ public class FlipCheckbox extends FrameLayout implements Checkable {
         if (mCheckedBackgroundTint != 0) {
             mCheckedView.getBackground().setColorFilter(mCheckedBackgroundTint, PorterDuff.Mode.SRC_IN);
         }
-        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        if (index != -1) addView(mCheckedView, index, params);
-        else addView(mCheckedView, params);
+        if (newView) {
+            LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            if (index != -1) addView(mCheckedView, index, params);
+            else addView(mCheckedView, params);
+        }
     }
 
     public int getCheckedTint() {
